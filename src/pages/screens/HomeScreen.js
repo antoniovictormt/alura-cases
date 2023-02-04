@@ -1,5 +1,5 @@
 import Footer from '@/pages/components/patterns/Footer'
-import Link from '@/pages/components/Link'
+import Link from 'next/link';
 import { theme } from '@/styles/theme';
 import { Image, Box, Text, Icon, Input, Button } from '@/styles/Components';
 

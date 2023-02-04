@@ -1,8 +1,8 @@
 import Footer from '@/pages/components/patterns/Footer';
-import Link from '@/pages/components/Link';
 import Head from "@/pages/components/Head";
 import { theme } from '@/styles/theme';
 import { Box, Text } from '@/styles/Components';
+import Link from 'next/link';
 
 export default function FAQScreen({ faq }) {
   return (
@@ -96,6 +96,7 @@ export default function FAQScreen({ faq }) {
               </Link>
             </Text>
           </Box>
+
           <Box
             styleSheet={{
               marginTop: {
@@ -107,7 +108,7 @@ export default function FAQScreen({ faq }) {
               }
             }}
           >
-            {faq.length === 0 && (
+            {faq?.length === 0 && (
               <Box
                 styleSheet={{
                   display: 'flex',
@@ -152,7 +153,7 @@ export default function FAQScreen({ faq }) {
               </Box>
             )}
             <Box as="dl">
-              {faq.map((faq) => (
+              {faq?.map((faq) => (
                 <Box
                   key={faq.question}
                   styleSheet={{
@@ -166,7 +167,7 @@ export default function FAQScreen({ faq }) {
                       color: theme.colors.neutral[900],
                     }}
                   >
-                    {faq.question}
+                    {faq?.question}
                   </Text>
                   <Text
                     as="dd"
@@ -176,7 +177,7 @@ export default function FAQScreen({ faq }) {
                       color: theme.colors.neutral[500],
                     }}
                   >
-                    {faq.answer}
+                    {faq?.answer}
                   </Text>
                 </Box>
               ))}
